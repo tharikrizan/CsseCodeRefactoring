@@ -8,6 +8,12 @@ import org.w3c.dom.Element;
 public class EmployeeQueryUtility extends BaseUtility {
 
 	/**
+	 * class constants
+	 */
+	public static final String QUERY = "query";
+	public static final String ID = "id";
+
+	/**
 	 * Get the employee query
 	 * @param id of the Employee
 	 * @return query
@@ -18,10 +24,10 @@ public class EmployeeQueryUtility extends BaseUtility {
 		Element element = null;
 		nodeList = DocumentBuilderFactory.newInstance().newDocumentBuilder()
 				.parse(new File(Constants.SRC_COM_HACKERTHON_CONFIG_EMPLOYEE_QUERY_XML))
-				.getElementsByTagName("query");
+				.getElementsByTagName(QUERY);
 		for (int x = 0; x < nodeList.getLength(); x++) {
 			element = (Element) nodeList.item(x);
-			if (element.getAttribute("id").equals(id))
+			if (element.getAttribute(ID).equals(id))
 				break;
 		}
 

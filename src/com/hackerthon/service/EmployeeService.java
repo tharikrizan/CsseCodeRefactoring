@@ -27,12 +27,19 @@ import java.util.Map;
  */
 public class EmployeeService extends EmployeeServiceBase {
 
+	/**
+	 * class constants
+	 */
 	public static final int PARAMETER_INDEX_1 = 1;
 	public static final int PARAMETER_INDEX_2 = 2;
 	public static final int PARAMETER_INDEX_3 = 3;
 	public static final int PARAMETER_INDEX_4 = 4;
 	public static final int PARAMETER_INDEX_5 = 5;
 	public static final int PARAMETER_INDEX_6 = 6;
+	public static final String COM_MYSQL_JDBC_DRIVER = "com.mysql.jdbc.Driver";
+	public static final String URL = "url";
+	public static final String USERNAME = "username";
+	public static final String PASSWORD = "password";
 
 	private final ArrayList<Employee> employeeList = new ArrayList<Employee>();
 	private static Connection connection;
@@ -44,9 +51,9 @@ public class EmployeeService extends EmployeeServiceBase {
 
 	private EmployeeService() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			connection = DriverManager.getConnection(properties.getProperty("url"), properties.getProperty("username"),
-					properties.getProperty("password"));
+			Class.forName(COM_MYSQL_JDBC_DRIVER);
+			connection = DriverManager.getConnection(properties.getProperty(URL), properties.getProperty(USERNAME),
+					properties.getProperty(PASSWORD));
 		} catch (Exception e) {
 			log.log(Level.SEVERE, e.getMessage());
 		} 
@@ -69,13 +76,8 @@ public class EmployeeService extends EmployeeServiceBase {
  * assign to Employee Object
  */
 	public void employeesFromXML() {
-
 		try {
-
-
-
 			for (Map<String, String> xmlParser : EmployeeTransformationUtility.getAllXMLPaths()) {
-
 				Employee employee = new Employee();
 				employee.setEmployeeId(xmlParser.get(Constants.XPATH_EMPLOYEE_ID_KEY));
 				employee.setFullName(xmlParser.get(Constants.XPATH_EMPLOYEE_NAME_KEY));
