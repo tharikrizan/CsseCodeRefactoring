@@ -6,13 +6,16 @@ package com.hackerthon.model;
  */
 public class Employee {
 
-	public String employeeId;
-	public String fullName;
-	public String address;
-	public String facultyName;
-	public String department;
-	public String designation;
+	private String employeeId;
+	private String fullName;
+	private String address;
+	private String facultyName;
+	private String department;
+	private String designation;
 
+	/*
+	* Getters and setters for the above member data fields
+	* */
 	public String getEmployeeId() {
 		return employeeId;
 	}
@@ -49,6 +52,7 @@ public class Employee {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+
 	@Override
 	public String toString() {
 		

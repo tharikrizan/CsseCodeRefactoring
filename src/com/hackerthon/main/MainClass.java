@@ -12,9 +12,6 @@ public class MainClass {
 	public static void main(String[] args) {
 
 		EmployeeService employeeService = EmployeeService.getInstance();
-
 		employeeService.displayEmployeesTableTemplateMethod();
-
-
 	}
 }

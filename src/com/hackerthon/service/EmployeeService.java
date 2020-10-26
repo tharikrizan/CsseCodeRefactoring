@@ -25,7 +25,7 @@ import java.util.Map;
  * @Author WD-04
  * @version 1.0
  */
-public class EmployeeService extends EmployeeServiceInt {
+public class EmployeeService extends EmployeeServiceBase {
 
 	public static final int PARAMETER_INDEX_1 = 1;
 	public static final int PARAMETER_INDEX_2 = 2;
@@ -136,8 +136,8 @@ public class EmployeeService extends EmployeeServiceInt {
 	}
 
 	/*
-	 * The method addEmployees() Adds the employee deatils to the table created in createEmployeeTable
-	 * Read each map employee emlenent from emloyee list and
+	 * The method addEmployees() Adds the employee details to the table created in createEmployeeTable
+	 * Read each map employee element from employee list and
 	 * assign to Employee Object
 	 */
 	public void addEmployees() {

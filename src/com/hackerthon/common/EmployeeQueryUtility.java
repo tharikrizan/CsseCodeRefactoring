@@ -7,6 +7,12 @@ import org.w3c.dom.Element;
 
 public class EmployeeQueryUtility extends BaseUtility {
 
+	/**
+	 * Get the employee query
+	 * @param id of the Employee
+	 * @return query
+	 * @throws Exception null exception(in case of the XML loading failed)
+	 */
 	public static String getEmployeeQueryById(String id) throws Exception {
 		NodeList nodeList;
 		Element element = null;

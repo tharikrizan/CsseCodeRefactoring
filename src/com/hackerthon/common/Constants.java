@@ -1,5 +1,8 @@
 package com.hackerthon.common;
 
+/**
+ * Global constants for the program
+ */
 public class Constants {
     public static final String XPATH_FACULTY_NAME_KEY = "XpathFacultyNameKey";
     public static final String XPATH_EMPLOYEE_ID_KEY = "XpathEmployeeIDKey";
